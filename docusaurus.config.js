@@ -1,11 +1,13 @@
+// 配置说明: https://v2.docusaurus.io/docs/docusaurus.config.js
+
 module.exports = {
   title: 'LittleboyHarry 博客',
   tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://littleboyharry.me',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'littleboyharry', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  projectName: 'blog', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'Harry 技术博客',
@@ -22,7 +24,7 @@ module.exports = {
         },
         { to: 'blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/littleboyharry',
           label: 'GitHub',
           position: 'right',
         },
@@ -45,6 +47,11 @@ module.exports = {
         },
         blog: {
           showReadingTime: true,
+          feedOptions: {
+            type: 'all',
+            copyright: 'Owned by LittleboyHarry',
+            language: 'zh-CN',
+          },
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
