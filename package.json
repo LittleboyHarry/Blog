@@ -9,8 +9,9 @@
     "deploy": "docusaurus deploy"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.58",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.58",
+    "@docusaurus/core": "^2.0.0-alpha.70",
+    "@docusaurus/plugin-pwa": "^2.0.0-alpha.70",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.70",
     "clsx": "^1.1.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
@@ -27,15 +28,18 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "@commitlint/cli": "^12.0.0",
-    "@commitlint/config-conventional": "^12.0.0",
-    "cz-conventional-changelog": "^3.3.0",
-    "husky": "^5.1.1"
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.0",
+    "@commitlint/config-conventional": "^12.0.0",
+    "@docusaurus/module-type-aliases": "^2.0.0-alpha.70",
+    "@types/react": "^16.9.44",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^5.1.1",
+    "typescript": "^3.9.7"
   }
 }

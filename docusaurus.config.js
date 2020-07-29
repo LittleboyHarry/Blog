@@ -13,7 +13,7 @@ module.exports = {
         alt: 'My Site Logo',
         src: 'img/goggles.jpg',
       },
-      links: [
+      items: [
         {
           to: 'docs/',
           activeBasePath: 'docs',
@@ -38,8 +38,6 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: 'doc1',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
