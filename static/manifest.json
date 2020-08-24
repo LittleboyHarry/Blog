@@ -1,0 +1,16 @@
+{
+  "name": "LittleboyHarry 博客",
+  "short_name": "LittleboyHarry Blog",
+  "display": "standalone",
+  "theme_color": "#2196f3",
+  "background_color": "#424242",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/img/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}

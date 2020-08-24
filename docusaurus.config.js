@@ -5,7 +5,7 @@ module.exports = {
   tagline: 'The tagline of my site',
   url: 'https://littleboyharry.me',
   baseUrl: '/',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/icons/favicon.ico',
   organizationName: 'littleboyharry', // Usually your GitHub org/user name.
   projectName: 'blog', // Usually your repo name.
   themeConfig: {
@@ -53,6 +53,27 @@ module.exports = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+      },
+    ],
+  ],
+  plugins: [
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: true,
+        offlineModeActivationStrategies: ['appInstalled', 'queryString'],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json', // your PWA manifest
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: 'rgb(37, 194, 160)',
+          },
+        ],
       },
     ],
   ],
