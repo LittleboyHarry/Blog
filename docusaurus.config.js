@@ -34,6 +34,9 @@ module.exports = {
       style: 'dark',
       copyright: `Built with Docusaurus.`,
     },
+    googleAnalytics: {
+      trackingID: 'UA-177209332-1',
+    },
   },
   presets: [
     [
