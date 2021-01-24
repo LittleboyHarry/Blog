@@ -1,5 +1,7 @@
 // 配置说明: https://v2.docusaurus.io/docs/docusaurus.config.js
+const path = require('path');
 
+/** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'LittleboyHarry 博客',
   tagline: 'The tagline of my site',
@@ -9,6 +11,9 @@ module.exports = {
   organizationName: 'littleboyharry', // Usually your GitHub org/user name.
   projectName: 'blog', // Usually your repo name.
   themeConfig: {
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
     navbar: {
       title: 'Harry 技术博客',
       logo: {
@@ -23,6 +28,7 @@ module.exports = {
           position: 'left',
         },
         { to: 'blog', label: '日记', position: 'left' },
+        { to: 'solutions', label: '求解栈', position: 'right' },
         {
           href: 'https://github.com/littleboyharry',
           label: 'GitHub',
@@ -32,7 +38,7 @@ module.exports = {
     },
     footer: {
       style: 'dark',
-      copyright: `Built with Docusaurus.`,
+      copyright: `Built with Docusaurus.<br/>站点已使用谷歌分析，我需要了解你以提供更好的服务~`,
     },
     googleAnalytics: {
       trackingID: 'UA-177209332-1',
@@ -79,5 +85,6 @@ module.exports = {
         ],
       },
     ],
+    path.resolve(__dirname, 'src/custom-plugin'),
   ],
 };

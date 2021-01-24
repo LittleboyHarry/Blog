@@ -1,0 +1,37 @@
+{
+    "type": "array",
+    "title": "SolutionsKnowledge",
+    "items": {
+        "type": "object",
+        "properties": {
+            "question": {
+                "type": "string",
+                "description": "问题"
+            },
+            "answer": {
+                "type": "string",
+                "description": "答案"
+            },
+            "subjects": {
+                "type": "array",
+                "description": "主题",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "see_also": {
+                "type": "array",
+                "description": "参见",
+                "items": {
+                    "type": "string",
+                    "format": "uri"
+                }
+            }
+        },
+        "required": [
+            "question",
+            "answer"
+        ],
+        "additionalProperties": false
+    }
+}

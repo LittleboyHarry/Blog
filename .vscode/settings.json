@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "./src/facts/schemas/solutions.json": "/src/facts/solutions.yaml"
+    }
+}

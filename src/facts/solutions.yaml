@@ -1,0 +1,5 @@
+- question: Qt Creator 打开时报错：无法找到 python36.dll
+  answer: lldb 所在目录下没有 python36.dll 动态库，去下载相关库并复制到 lldb 所在目录即可。
+  subjects: [qt]
+  see_also:
+    - https://forum.qt.io/topic/109164/dll-error-when-starting-qt-creator-4-8-2/12
