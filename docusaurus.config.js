@@ -15,10 +15,10 @@ module.exports = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Harry 技术博客',
+      title: 'LittleboyHarry Blog',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/goggles.jpg',
+        src: 'avatar.png',
       },
       items: [
         {
@@ -28,17 +28,17 @@ module.exports = {
           position: 'left',
         },
         { to: 'blog', label: '日记', position: 'left' },
-        { to: 'solutions', label: '求解栈', position: 'right' },
         {
-          href: 'https://github.com/littleboyharry',
-          label: 'GitHub',
+          href: 'https://github.com/LittleboyHarry',
           position: 'right',
+          label: 'follow me',
+          className: 'header-github-link',
         },
       ],
     },
     footer: {
       style: 'dark',
-      copyright: `Built with Docusaurus.<br/>站点已使用谷歌分析，我需要了解你以提供更好的服务~`,
+      copyright: `Built with Docusaurus.<br/>站点已使用谷歌分析，我需要了解你的信息以提供更好的服务~`,
     },
     googleAnalytics: {
       trackingID: 'UA-177209332-1',

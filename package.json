@@ -16,6 +16,7 @@
     "clsx": "^1.1.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-jss": "^10.5.1",
     "yaml-loader": "^0.6.0"
   },
   "browserslist": {

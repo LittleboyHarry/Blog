@@ -3,6 +3,75 @@ import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
+import { createUseStyles } from 'react-jss';
+
+/** @reference https://cssinjs.org/react-jss/?v=v10.5.1 */
+const useStyles = createUseStyles({
+  specialPageCard: {
+    minWidth: '100%',
+    padding: '1rem',
+    display: 'inline-block',
+  },
+  '@media (min-width: 400px)': {
+    specialPageCard: {
+      minWidth: '50%',
+    },
+  },
+  '@media (min-width: 640px)': {
+    specialPageCard: {
+      minWidth: '33%',
+    },
+  },
+});
+
+function SpecialPage(props: {
+  name: string;
+  desc: string;
+  path: string;
+  color?: string;
+}) {
+  const styles = useStyles();
+
+  return (
+    <div className={styles.specialPageCard}>
+      <a
+        href={props.path}
+        target="_self"
+        style={{
+          textDecoration: 'none',
+          color:'inherit'
+        }}
+      >
+        <div
+          className="card"
+          {...(props.color && {
+            style: { color: 'white', background: props.color },
+          })}
+        >
+          <div className="card__header">
+            <h3>{props.name}</h3>
+          </div>
+          <div className="card__body">
+            <p>{props.desc}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  );
+}
+
+function SpecialPages() {
+  return (
+    <div className="container" style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <SpecialPage
+        name="解决方法汇总"
+        desc="我收集的日常技术问题"
+        path="/solutions"
+        color="#F33"
+      />
+    </div>
+  );
+}
 
 function Home() {
   return (
@@ -32,7 +101,7 @@ function Home() {
       </header>
       <main>
         <section className={styles.features}>
-          <div className="container"></div>
+          <SpecialPages />
         </section>
       </main>
     </Layout>
