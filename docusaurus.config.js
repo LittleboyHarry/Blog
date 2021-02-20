@@ -40,7 +40,7 @@ module.exports = {
     },
     footer: {
       style: 'dark',
-      copyright: `Built with Docusaurus.<br/>站点已使用谷歌分析，我需要了解你的信息以提供更好的服务~`,
+      copyright: `Built with Docusaurus.<br/>站点已使用 Google Analytics ，我想多了解一下各位亲爱的读者~`,
     },
     googleAnalytics: {
       trackingID: 'UA-177209332-1',

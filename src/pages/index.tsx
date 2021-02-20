@@ -39,14 +39,16 @@ function SpecialPage(props: {
         target="_self"
         style={{
           textDecoration: 'none',
-          color:'inherit'
+          color: 'inherit',
         }}
       >
         <div
           className="card"
+          /* 
           {...(props.color && {
             style: { color: 'white', background: props.color },
           })}
+           */
         >
           <div className="card__header">
             <h3>{props.name}</h3>

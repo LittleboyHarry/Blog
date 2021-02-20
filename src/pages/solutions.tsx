@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import { URL } from 'url';
 
 import { SolutionsKnowledge } from '../facts/schemas/solutions';
 import _solutionsKnowledge from '../facts/solutions.yaml';

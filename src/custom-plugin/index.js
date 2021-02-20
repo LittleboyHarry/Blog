@@ -3,18 +3,11 @@ module.exports = function (context, options) {
     name: 'littleboyharry-custom-plugin',
     injectHtmlTags() {
       return {
-        headTags: [
-          {
-            tagName: 'base',
-            attributes: {
-              target: '_blank',
-            },
-          },
-        ],
+        headTags: [],
       };
     },
     configureWebpack(config, isServer, utils) {
-      const { getCacheLoader } = utils;
+      // const { getCacheLoader } = utils;
       return {
         module: {
           rules: [
