@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 
-import { SolutionsKnowledge } from '../facts/schemas/solutions';
+import { SolutionsKnowledge } from '../facts/types/solutions';
 import _solutionsKnowledge from '../facts/solutions.yaml';
 const solutionsKnowledge = _solutionsKnowledge as SolutionsKnowledge;
 
