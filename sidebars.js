@@ -1,6 +1,6 @@
 module.exports = {
   docs: {
     文档: ['working'],
-    参考指南: ['linux-desktop-getting-started'],
+    开发配置: ['setup-linux-vm', 'setup-linux-desktop'],
   },
 };

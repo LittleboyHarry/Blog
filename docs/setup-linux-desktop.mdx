@@ -1,8 +1,17 @@
 ---
-title: Linux 桌面系统上手指南
+title: 优雅配置 Linux 桌面系统
 ---
 
 国内镜像安装采用的是 gitee 和阿里云
+
+## 安装 gnome-tweaks
+
+```sh
+sudo dnf install gnome-tweaks
+gnome-tweaks &!
+```
+
+“字体”栏目下可调节显示缩放大小
 
 ## 转战 KDE Manjaro
 
@@ -11,6 +20,8 @@ title: Linux 桌面系统上手指南
 import { PackageManagersComparisonTable } from './linux-desktop-getting-started.mdx.components';
 
 <PackageManagersComparisonTable type="pacman"/>
+
+参见 <https://wiki.archlinux.org/index.php/Pacman/Rosetta>
 
 ## 配置命令行
 
@@ -38,6 +49,8 @@ manjaro-application-utility
 
 fcitx .xprofile
 
+## KDE 桌面系统
+
 ### 常见问题
 
 - 空闲时却仍感觉异常卡顿、磁盘不停高速转动
@@ -62,3 +75,10 @@ fcitx .xprofile
   # 激活自动补全功能的指导
   pipx completions
   ```
+
+&! 可脱离终端启动 GUI 程序
+
+以下情况建议 `Ctrl` + `Alt` + `F2` ~ `F6` 启动一个字符流界面的 tty 进行操作：
+
+- 会影响桌面系统的系统包库升级
+- 系统桌面崩溃了

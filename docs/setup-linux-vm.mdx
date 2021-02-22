@@ -1,0 +1,82 @@
+---
+title: Linux 虚拟机最佳配置
+---
+
+使用 VirtualBox 安装 Fedora Gnome 发行版
+
+![](/figures/linux-vm-getting-started/install-addition.png)
+
+
+## 启动和控制虚拟机
+
+我们可以右键虚拟机为其创建一个桌面快捷方式，方便启动：
+
+![](/figures/linux-vm-getting-started/create-shortcut.png)
+
+<!-- TODO 讲解分离模式 -->
+
+![](/figures/linux-vm-getting-started/shortcut-modify.png)
+
+## 换源
+
+感谢中科大[提供的服务](https://mirrors.ustc.edu.cn/help/fedora.html)
+
+```sh
+# 备份
+cd ~
+mkdir backups
+cp /etc/yum.repos.d backups/yum-repos -r
+
+# 换源
+sudo sed -e 's|^metalink=|#metalink=|g' \
+         -e 's|^#baseurl=http://download.example/pub/fedora/linux|baseurl=https://mirrors.ustc.edu.cn/fedora|g' \
+         -i.bak \
+         /etc/yum.repos.d/fedora.repo \
+         /etc/yum.repos.d/fedora-modular.repo \
+         /etc/yum.repos.d/fedora-updates.repo \
+         /etc/yum.repos.d/fedora-updates-modular.repo
+
+# 刷新缓存
+sudo dnf makecache
+```
+
+## 绑定虚拟网卡地址
+
+关闭虚拟机后打开设置：
+
+![](/figures/linux-vm-getting-started/menu-item-virtual-interface.png)
+
+如下图为上部，为虚拟网卡绑定主机 IP 地址和掩码；
+随后进入虚拟机打开网络设置，绑定同段下不同的 IP 地址和相同的掩码，点击“应用”。
+
+![](/figures/linux-vm-getting-started/bind-ip.png)
+
+还可以顺便配置一下主机和虚拟机的 hosts 表，取个好记的名字
+
+Windows: `C:\Windows\System32\drivers\etc\hosts`
+
+Unix: `/etc/hosts`
+
+## 配置 ssh 连接
+
+前置条件：完成[上述准备](#绑定虚拟网卡地址)
+
+运行 ssh-copy-id 配置免密登录
+
+## 安装 zsh
+
+```sh
+sudo dnf install zsh util-linux-user
+# Gitee 安装 oh-my-zsh
+REPO=mirrors/oh-my-zsh REMOTE=https://gitee.com/${REPO}.git sh -c "$(curl -fsSL https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"
+```
+
+ys 主题
+
+## 附
+
+### DNF 包管理器
+
+import { PackageManagersComparisonTable } from './linux-desktop-getting-started.mdx.components';
+
+<PackageManagersComparisonTable type="rpm"/>
