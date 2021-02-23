@@ -1,0 +1,64 @@
+---
+title: Linux 桌面系统上手指南
+---
+
+国内镜像安装采用的是 gitee 和阿里云
+
+## 转战 KDE Manjaro
+
+### 包管理器命令对比
+
+import { PackageManagersComparisonTable } from './linux-desktop-getting-started.mdx.components';
+
+<PackageManagersComparisonTable type="pacman"/>
+
+## 配置命令行
+
+Linux 图形化系统发展相对缓慢，尤其是很多底层配置设定 GUI 界面都没有适配好、甚至完全没有，
+因此日常 Linux 使用还是要依赖命令行控制，更何况 Linux 命令行拥有大批量的社区技术爱好者维护改善，
+相比图形界面好用太多了！
+
+### 使用国内镜像站
+
+默认软件源大都是国外服务器，下载资源速度太慢需要更换国内源加速。
+
+### 装机必备软件傻瓜式向导
+
+在完成[镜像站切换](#使用国内镜像站)后（至少更换 `pacman`）
+
+命令行执行：（建议并点击左上角 `advanced` 按钮列出更多程序）
+
+```
+manjaro-application-utility
+```
+
+### fcitx 中文输入法
+
+- fcitx5 pingyin
+
+fcitx .xprofile
+
+### 常见问题
+
+- 空闲时却仍感觉异常卡顿、磁盘不停高速转动
+
+  <!-- TODO -->
+
+## 软件换源
+
+## 软件推荐
+
+- [pipx](https://github.com/pipxproject/pipx)
+
+  可避免 pip 包依赖冲突的 python 命令行工具安装器
+
+  ```bash
+  # 安装
+  python3 -m pip install --user pipx
+
+  # 加入环境变量的指导
+  python3 -m pipx ensurepath
+
+  # 激活自动补全功能的指导
+  pipx completions
+  ```
