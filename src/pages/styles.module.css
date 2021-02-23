@@ -17,7 +17,10 @@
 
 @media screen and (max-width: 966px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 3rem 0;
+  }
+  .heroTitle {
+    font-size: larger;
   }
 }
 

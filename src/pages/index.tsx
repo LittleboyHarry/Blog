@@ -10,31 +10,34 @@ function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
   return (
-    <Layout
-      description="Description will go into a meta tag in <head />"
-    >
-      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <Layout description="Description will go into a meta tag in <head />">
+      <header className={clsx('hero', styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <h1
+            className={clsx('hero__title', styles.heroTitle)}
+            style={{ color: 'black' }}
+          >
+            <span style={{ display: 'inline-block' }}>LittleboyHarry</span>
+            <span style={{ display: 'inline-block' }}>博客</span>
+          </h1>
+          <br />
+          {/* <p className="hero__subtitle">{siteConfig.tagline}</p> */}
           <div className={styles.buttons}>
             <Link
               className={clsx(
-                'button button--outline button--secondary button--lg',
+                'button button--secondary disabled',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/')}
             >
-              Get Started
+              网站建设中🔨
             </Link>
           </div>
         </div>
       </header>
       <main>
-          <section className={styles.features}>
-            <div className="container">
-            </div>
-          </section>
+        <section className={styles.features}>
+          <div className="container"></div>
+        </section>
       </main>
     </Layout>
   );

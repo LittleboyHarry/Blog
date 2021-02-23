@@ -19,10 +19,10 @@ module.exports = {
         {
           to: 'docs/',
           activeBasePath: 'docs',
-          label: 'Docs',
+          label: '博文',
           position: 'left',
         },
-        { to: 'blog', label: 'Blog', position: 'left' },
+        { to: 'blog', label: '日记', position: 'left' },
         {
           href: 'https://github.com/littleboyharry',
           label: 'GitHub',
@@ -41,9 +41,6 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
         },
         blog: {
           showReadingTime: true,
