@@ -90,7 +90,7 @@ function Home() {
           </h1>
           <br />
           {/* <p className="hero__subtitle">{siteConfig.tagline}</p> */}
-          <div className={styles.buttons}>
+          {/* <div className={styles.buttons}>
             <Link
               className={clsx(
                 'button button--secondary disabled',
@@ -99,13 +99,11 @@ function Home() {
             >
               网站建设中🔨
             </Link>
-          </div>
+          </div> */}
         </div>
       </header>
       <main>
-        <section className={styles.features}>
-          <SpecialPages />
-        </section>
+        <section className={styles.features}>{/* <SpecialPages /> */}</section>
         <div className="container" style={{ marginBottom: '64px' }}>
           <TechStackIcons />
         </div>
