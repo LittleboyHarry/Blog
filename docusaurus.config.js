@@ -9,7 +9,7 @@ module.exports = {
   tagline: 'The tagline of my site',
   url: 'https://littleboyharry.me',
   baseUrl: '/',
-  favicon: 'img/icons/favicon.ico',
+  favicon: 'icons/favicon.ico',
   organizationName: 'littleboyharry', // Usually your GitHub org/user name.
   projectName: 'blog', // Usually your repo name.
   themeConfig: {
@@ -44,12 +44,21 @@ module.exports = {
         {
           items: [
             {
-              html: `<p style="text-align:center;">Built with Docusaurus.<br/>站点已使用 Google Analytics ，我想多了解一下各位亲爱的读者~</p>`,
+              html: `<p style="text-align:center;font-size:0.9em;">
+                Built with Docusaurus.<br/>
+                站点已使用 Google Analytics ，我想多了解一下各位亲爱的读者~
+              </p>`,
             },
           ],
         },
       ],
-      copyright: `<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />本站点内作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a>进行许可。`,
+      copyright: `<div style="font-size:0.9rem;"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="cc" src="/icons/cc.svg">
+        <img alt="by" src="/icons/cc-by.svg">
+        <img alt="sa" src="/icons/cc-sa.svg">
+      </a><br />
+        本站点内作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a>进行许可。
+      </div>`,
     },
     googleAnalytics: {
       trackingID: 'UA-177209332-1',
