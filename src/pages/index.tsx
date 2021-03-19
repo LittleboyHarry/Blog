@@ -4,6 +4,7 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 import { createUseStyles } from 'react-jss';
+import { TechStackIcons } from '../components';
 
 /** @reference https://cssinjs.org/react-jss/?v=v10.5.1 */
 const useStyles = createUseStyles({
@@ -105,6 +106,9 @@ function Home() {
         <section className={styles.features}>
           <SpecialPages />
         </section>
+        <div className="container" style={{ marginBottom: '64px' }}>
+          <TechStackIcons />
+        </div>
       </main>
     </Layout>
   );
