@@ -1,6 +1,14 @@
 module.exports = {
-  docs: {
-    文档: ['working'],
-    开发配置: ['setup-linux-vm', 'setup-linux-desktop'],
-  },
+  docs: [
+    {
+      type: 'category',
+      label: '文档',
+      items: ['working'],
+    },
+    {
+      type: 'category',
+      label: '开发配置',
+      items: ['setup-linux-vm', 'setup-linux-desktop'],
+    },
+  ],
 };
