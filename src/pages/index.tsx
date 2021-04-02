@@ -1,29 +1,22 @@
 import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
+// import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
-import { createUseStyles } from 'react-jss';
 import { TechStackIcons } from '../components';
+import styled from 'styled-components';
 
-/** @reference https://cssinjs.org/react-jss/?v=v10.5.1 */
-const useStyles = createUseStyles({
-  specialPageCard: {
-    minWidth: '100%',
-    padding: '1rem',
-    display: 'inline-block',
-  },
-  '@media (min-width: 400px)': {
-    specialPageCard: {
-      minWidth: '50%',
-    },
-  },
-  '@media (min-width: 640px)': {
-    specialPageCard: {
-      minWidth: '33%',
-    },
-  },
-});
+const StyledSpecialPageCard = styled.div`
+  min-width: 100%;
+  padding: 1rem;
+  display: inline-block;
+  @media only screen and (min-width: 400px) {
+    minwidth: '50%';
+  }
+  @media only screen and (min-width: 640px) {
+    minwidth: '33%';
+  }
+`;
 
 function SpecialPage(props: {
   name: string;
@@ -31,10 +24,8 @@ function SpecialPage(props: {
   path: string;
   color?: string;
 }) {
-  const styles = useStyles();
-
   return (
-    <div className={styles.specialPageCard}>
+    <StyledSpecialPageCard>
       <a
         href={props.path}
         target="_self"
@@ -59,7 +50,7 @@ function SpecialPage(props: {
           </div>
         </div>
       </a>
-    </div>
+    </StyledSpecialPageCard>
   );
 }
 

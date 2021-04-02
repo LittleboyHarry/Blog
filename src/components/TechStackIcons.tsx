@@ -1,5 +1,5 @@
 import React from 'react';
-import { createUseStyles } from 'react-jss';
+import styled from 'styled-components';
 
 import IconAndroid from 'devicon/icons/android/android-original.svg';
 import IconBash from 'devicon/icons/bash/bash-original.svg';
@@ -39,40 +39,36 @@ import IconWindows from 'devicon/icons/windows8/windows8-original.svg';
 
 // thanks to https://devicon.dev/
 
-const useIconStackStyle = createUseStyles({
-  box: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '16px',
-    '&>*': {
-      width: '96px',
-    },
-  },
-});
+const IconStackWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  & > * {
+    width: 96px;
+  }
+`;
 
 function IconStack({ iconSet }: { iconSet: [string, () => JSX.Element][] }) {
-  const { box } = useIconStackStyle();
-
   return (
-    <div className={box}>
+    <IconStackWrapper>
       {iconSet.map(([name, Icon], i) => (
-        <div title={name}>
-          <Icon key={i} />
+        <div key={i} title={name}>
+          <Icon />
         </div>
       ))}
-    </div>
+    </IconStackWrapper>
   );
 }
 
-const useContainerStyle = createUseStyles({
-  container: { '&>p': { margin: '2rem 0' } },
-});
+const TechStackIconWrapper = styled.div`
+  & > p {
+    margin: 2rem 0;
+  }
+`;
 
 export default function () {
-  const { container } = useContainerStyle();
-
   return (
-    <div className={container}>
+    <TechStackIconWrapper>
       <p>我很熟悉：</p>
       <IconStack
         iconSet={[
@@ -123,6 +119,6 @@ export default function () {
           ['Nginx', IconNginx],
         ]}
       />
-    </div>
+    </TechStackIconWrapper>
   );
 }

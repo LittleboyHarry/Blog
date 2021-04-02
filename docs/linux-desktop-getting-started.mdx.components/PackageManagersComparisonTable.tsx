@@ -2,39 +2,37 @@
 import React, { ReactElement, useContext, useRef } from 'react';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import { createUseStyles } from 'react-jss';
 import { FaRegCopy } from 'react-icons/fa';
 import { Flex, Input, Label, Checkbox, ThemeProvider, Box } from 'theme-ui';
 import { RecoilRoot, atom, useRecoilState, RecoilState } from 'recoil';
 import copy from 'copy-to-clipboard';
-import useThemeContext from '@theme/hooks/useThemeContext';
 import NotificationSystem, {
   System as Notificator,
 } from 'react-notification-system';
+import styled from 'styled-components';
 
-const useStyles = createUseStyles({
-  tabs: {
-    '& li': {
-      flex: 1,
-      justifyContent: 'center',
-    },
-  },
-  table: {
-    display: 'table',
-    '--ifm-table-cell-padding': '0.33rem',
-    '& td:first-child': {
-      width: '38%',
-    },
-    '& .copy-button': {
-      opacity: 0,
-      transition: '0.3s opacity',
-      float: 'right',
-    },
-    '& td:hover .copy-button': {
-      opacity: 1,
-    },
-  },
-});
+const StyledTable = styled.table`
+  --ifm-table-cell-padding: 0.33rem;
+  display: table;
+  & td:first-child {
+    width: 38%;
+  }
+  & .copy-button {
+    opacity: 0;
+    transition: 0.3s opacity;
+    float: right;
+  }
+  & td:hover .copy-button {
+    opacity: 1;
+  }
+`;
+
+const StyledTabs = styled(Tabs)`
+  & li {
+    flex: 1;
+    justify-content: center;
+  }
+`;
 
 interface PackageManagerCommandSyntax {
   fetch: {
@@ -198,10 +196,8 @@ function PmUseCases({
 }: {
   syntax: PackageManagerCommandSyntax;
 }): ReactElement {
-  const styles = useStyles();
-
   return (
-    <table className={styles.table}>
+    <StyledTable>
       <tbody>
         <tr>
           <th colSpan={2}>在线获取</th>
@@ -217,7 +213,7 @@ function PmUseCases({
         <PmUseCase desc="在线升级" format={syntax.installed.update} />
         <PmUseCase desc="搜索" format={syntax.installed.search} />
       </tbody>
-    </table>
+    </StyledTable>
   );
 }
 
@@ -267,7 +263,6 @@ function NotificatorProvider({ children }: { children: ReactElement }) {
     <NotifiterContext.Provider
       value={{
         copied() {
-          console.log(notificatorRef.current);
           notificatorRef.current.addNotification({
             title: '已复制！',
             level: 'success',
@@ -285,16 +280,13 @@ function NotificatorProvider({ children }: { children: ReactElement }) {
 }
 
 export default ({ type }: { type: 'apt' | 'pacman' | 'rpm' }) => {
-  useThemeContext();
-  const styles = useStyles();
   return (
     <RecoilRoot>
       <NotificatorProvider>
         <ThemeProvider
           theme={{ useBodyStyles: false, colors: { primary: '#07c' } }}
         >
-          <Tabs
-            className={styles.tabs}
+          <StyledTabs
             defaultValue={type}
             values={[
               { label: 'Ubuntu - Debian', value: 'apt' },
@@ -311,7 +303,7 @@ export default ({ type }: { type: 'apt' | 'pacman' | 'rpm' }) => {
             <TabItem value="rpm">
               <PmUseCases {...{ syntax: syntaxes.rpm }} />
             </TabItem>
-          </Tabs>
+          </StyledTabs>
           <Modifier />
           参考来自&nbsp;
           <a href="https://wiki.archlinux.org/index.php/Pacman/Rosetta">
