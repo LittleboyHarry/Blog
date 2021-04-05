@@ -2,7 +2,6 @@
 import React, { ReactElement, useContext, useRef } from 'react';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import { FaRegCopy } from 'react-icons/fa';
 import { Flex, Input, Label, Checkbox, ThemeProvider, Box } from 'theme-ui';
 import { RecoilRoot, atom, useRecoilState, RecoilState } from 'recoil';
 import copy from 'copy-to-clipboard';
@@ -10,6 +9,7 @@ import NotificationSystem, {
   System as Notificator,
 } from 'react-notification-system';
 import styled from 'styled-components';
+import * as MyIcons from '@theme/MyIcons';
 
 const StyledTable = styled.table`
   --ifm-table-cell-padding: 0.33rem;
@@ -183,8 +183,8 @@ function PmUseCase({ desc, format }: { desc: string; format: string }) {
         }}
       >
         {node}
-        <span className="copy-button" style={{ color: '#F63' }}>
-          <FaRegCopy />
+        <span className="copy-button" style={{ color: '#a44' }}>
+          <MyIcons.Copy />
         </span>
       </td>
     </tr>
