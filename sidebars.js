@@ -10,5 +10,10 @@ module.exports = {
       label: '开发配置',
       items: ['setup-linux-vm', 'setup-linux-desktop'],
     },
+    {
+      type: 'category',
+      label: '算法学习',
+      items: ['java-for-algorithm'],
+    },
   ],
 };

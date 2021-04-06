@@ -1,0 +1,74 @@
+---
+title: Java 如何刷算法
+---
+
+## 格式转换
+
+```java
+String.valueOf(anyValue);
+Integer.valueOf(anyString);
+Double.valueOf(anyString);
+```
+
+## 编程技巧
+
+- 适当实现 Iterator 已简化循环迭代
+- 在不显著占用内存的条件下，使用伪元素哑节点 (dummy) 可以简化条件判断的逻辑代码
+
+## 高速输入和解析
+
+Java 解题一般用 Scanner 类来进行输入读取即可。
+但有些题目对时间要求严格，那么就需要使用更高效的读取解析类。
+
+:::note 改善输入
+
+不使用 Scanner ，改用 **new BufferedReader(new InputStreamReader(System.in))** 对象来接受
+
+:::
+
+:::note 改善解析
+
+使用 **StreamTokenizer** 或 **StringTokenizer** 读取 token
+
+缺点：只推荐用来处理以空格为分隔符的字母或数字组成的 token，特殊字符会有特效
+
+:::
+
+:::note 改善输出
+
+改用 **PrintWriter** 而非直接调用 System.out，全部输出完成后要调用 `flush()` 方法。
+
+仅在输出规模超过 10000 次后才有[明显差异](https://stackoverflow.com/a/63097780/11457223)
+
+:::
+
+<!-- TODO BufferedReader 的作用 -->
+
+参见：https://www.acwing.com/blog/content/279/
+
+## 测试
+
+导入 JUnit 类和方法
+
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+```
+
+| 方法                 | 作用                     |
+| -------------------- | ------------------------ |
+| assertIterableEquals | 比较可迭代序列（如数组） |
+
+## 提交代码的潜规则
+
+- 不要有 package 声明
+- 有且仅有一个具有主函数且名为 Main 的 public class
+
+## 注意事项
+
+- 推荐调用 `Scanner.hasNext*()` 来检测输入格式有效性
+
+## 参考
+
+- https://www.cnblogs.com/zhrb/p/6347738.html
+- https://www.jianshu.com/p/fa235c29fbea
