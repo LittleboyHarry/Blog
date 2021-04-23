@@ -1,0 +1,54 @@
+---
+title: 斐波那契分析优化
+---
+
+:::note 问题
+
+假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+
+每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
+
+:::
+
+详见: <https://leetcode-cn.com/problems/climbing-stairs/>
+
+通过分析，我们发现答案等效于斐波那契数列（从 1 , 2 开始）。下进行详解优化分析与设计
+
+## 初步分析与简单求解
+
+根据题意，我们要求解 n 种可能的方法，
+就需要先分析第一步走 1 个台阶、2 个台阶后可能的方法，
+然后分类讨论第二步的走法、进而第三步、第四步……
+最后结果是上述方法综合的总和。
+
+这符合分治的思想[^1]
+
+### 存在问题
+
+时间复杂度 $O(2^n)$
+
+空间复杂度 $O(n)$
+
+## 优化一：记忆递归解
+
+## 优化二：动态规划
+
+## 优化三：矩阵快速乘法
+
+递推公式 $g(n)=M^n \cdot g(0)\Leftrightarrow g(n)=M \cdot g(n-1)$
+
+此处有 $g(n)
+    =\begin{bmatrix}f(n+1)\\f(n)\end{bmatrix}
+    =\begin{bmatrix}f(n)+f(n-1)\\f(n)\end{bmatrix}
+    =\begin{bmatrix}1\ 1\\1\ 0\end{bmatrix}g(n-1)$
+
+$M=\begin{bmatrix}1\ 1\\1\ 0\end{bmatrix}$
+
+$M^n$ 可以使用快速幂算法，从而时间复杂度为 $O(\log{n})$ 空间 $O(1)$
+
+## 参考资料
+
+wiki 记忆计算[^2]
+
+[^1]: wiki 递归 https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm
+[^2]: https://en.wikipedia.org/wiki/Memoization
