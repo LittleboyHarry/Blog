@@ -13,7 +13,7 @@ module.exports = {
     {
       type: 'category',
       label: '算法学习',
-      items: ['idea-oj-hints', 'java-for-algorithm'],
+      items: ['algorithm/idea-oj-hints', 'algorithm/use-java'],
     },
   ],
 };
